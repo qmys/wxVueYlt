@@ -33,15 +33,15 @@ var rules = [
 ]
 
 module.exports = {
+    devtool: 'source-map',
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, './dist/js'),
-        filename: 'wxVueYlt.js',
-        library: 'wxVueYlt',
+        path: path.resolve(__dirname, './dist/'),
+        filename: 'wxvueylt.min.js',
+        library: 'wxvueylt',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
-    devtool: '#cheap-module-eval-source-map',
     module: {
         rules: rules
     }
