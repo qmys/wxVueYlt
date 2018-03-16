@@ -1,0 +1,18 @@
+@import "../../common/index";
+
+.wxVueYlt-btn_default{
+  color: @wxVueYltBtnDefaultFontColor;
+  border: 1px solid @wxVueYltBtnDefaultBg;
+  background-color: @wxVueYltBtnDefaultBg;
+  &:not([disabled]):visited {
+    color: @wxVueYltBtnDefaultFontColor;
+  }
+  &:not([disabled]):active {
+    color: @wxVueYltBtnDefaultActiveFontColor;
+    background-color: @wxVueYltBtnDefaultActiveBg;
+  }
+  &[disabled]{
+    color: @wxVueYltBtnDefaultDisabledFontColor;
+    background-color: @wxVueYltBtnDefaultDisabledBg;
+  }
+}

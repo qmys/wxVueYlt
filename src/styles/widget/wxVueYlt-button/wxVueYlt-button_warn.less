@@ -1,0 +1,17 @@
+@import "../../common/index";
+
+.wxVueYlt-btn_warn{
+  color: @wxVueYltBtnFontColor;
+  border: 1px solid @wxVueYltBtnWarnBg;
+  background-color: @wxVueYltBtnWarnBg;
+  &:not([disabled]):visited {
+    color: @wxVueYltBtnFontColor;
+  }
+  &:not([disabled]):active {
+    color: @wxVueYltBtnActiveFontColor;
+    background-color: @wxVueYltBtnWarnActiveBg;
+  }
+  &[disabled]{
+    background-color: @wxVueYltBtnwarnDisabledBg;
+  }
+}

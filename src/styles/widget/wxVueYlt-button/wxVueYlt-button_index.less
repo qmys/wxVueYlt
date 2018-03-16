@@ -1,0 +1,24 @@
+@import "wxVueYlt-button_global";
+@import "wxVueYlt-button_default";
+@import "wxVueYlt-button_primary";
+@import "wxVueYlt-button_warn";
+@import "wxVueYlt-button_plain";
+@import "wxVueYlt-button_disabled";
+
+
+.wxVueYlt-btn + .wxVueYlt-btn {
+  margin-top: @wxVueYltBtnDefaultGap;
+}
+
+.wxVueYlt-btn.wxVueYlt-btn_inline + .wxVueYlt-btn.wxVueYlt-btn_inline {
+  margin-top: auto;
+  margin-left: @wxVueYltBtnDefaultGap;
+}
+
+.wxVueYlt-btn_small{
+  display: inline-block;
+  padding: 0 1.32em;
+  width: auto;
+  line-height: @wxVueYltBtnMiniHeight;
+  font-size: @wxVueYltBtnMiniFontSize;
+}
