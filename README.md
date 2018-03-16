@@ -19,9 +19,8 @@ Using a script tag for global use:
 
 ```
 
-Using css via `import`:
+Using `import`:
 
-```js
 import wxvueylt from 'wxvueylt/dist/wxvueylt.min';
 import 'wxvueylt/dist/styles/index.css';
 Vue.use(wxvueylt)

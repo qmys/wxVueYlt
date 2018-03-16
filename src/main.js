@@ -1,7 +1,9 @@
 import yltButton from './components/button'
+import yltInput from './components/input'
 
 const components = {
-    yltButton
+    yltButton,
+    yltInput
 }
 
 const wxVueYlt = {

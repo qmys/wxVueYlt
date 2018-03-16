@@ -33,7 +33,7 @@ var rules = [
 ]
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: '#cheap-module-eval-source-map',
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist/'),
