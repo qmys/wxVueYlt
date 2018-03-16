@@ -19,6 +19,8 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue)
 }
 
-module.exports = {
+const API = {
     install
 }
+
+module.exports.default = module.exports = API
