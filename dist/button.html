@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="text/javascript" src="vue.js"></script>
+    <script src="js/wxVueYlt.js"></script>
+    <style>
+        body{
+            height: 100%;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ylt-Button type="plain" size="small">幽灵按钮</ylt-Button>
+        <ylt-Button type="default" size="small">幽灵按钮</ylt-Button>
+        <ylt-Button type="primary" size="small">幽灵按钮</ylt-Button>
+        <ylt-Button type="warn" size="small">幽灵按钮</ylt-Button>
+        <ylt-Button type="plain" style="border-color: #1AAD19; color:#1AAD19; ">plain 幽灵按钮</ylt-Button>
+        <ylt-Button type="plain">plain 幽灵按钮</ylt-Button>
+        <ylt-Button type="plain" loading>plain loading 幽灵按钮</ylt-Button>
+        <ylt-Button type="plain" disabled>plain disabled 幽灵按钮</ylt-Button>
+        <ylt-Button type="default">页面次要操作</ylt-Button>
+        <ylt-Button type="default" loading>loading 页面次要操作</ylt-Button>
+        <ylt-Button type="default" disabled>disabled 禁止主操作</ylt-Button>
+        <ylt-Button type="primary"  :loading="loading" @click="toLoading">
+            <span v-if="!loading">Click me!</span>
+            <span v-else>Loading...</span>
+        </ylt-Button>
+        <ylt-Button type="primary" loading  @click="toLoading2">loading 页面主操作</ylt-Button>
+        <ylt-Button type="primary" disabled  @click="toLoading3">disabled 禁止主操作</ylt-Button>
+        <ylt-Button type="warn">警告类操作</ylt-Button>
+        <ylt-Button type="warn" loading>loading 警告类操作</ylt-Button>
+        <ylt-Button type="warn" disabled>disabled 警告类操作</ylt-Button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data () {
+                return {
+                    loading: false
+                }
+            },
+            methods: {
+                toLoading () {
+                    let _this = this
+                    this.loading = true
+                    setTimeout(() => {
+                        _this.loading = false
+                    },3000)
+                },
+                toLoading2 () {
+                    alert('2')
+                },
+                toLoading3 () {
+                    alert('3')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
