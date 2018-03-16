@@ -20,7 +20,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 const API = {
-    install
+    install,
+    ...components
 }
 
 module.exports.default = module.exports = API

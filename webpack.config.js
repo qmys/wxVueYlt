@@ -34,11 +34,10 @@ var rules = [
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/index.js',
+    entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist/'),
         filename: 'wxvueylt.min.js',
-        library: 'wxvueylt',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
