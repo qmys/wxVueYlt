@@ -1,1 +1,19 @@
 @import "wxVueYlt-from_default";
+
+.wxVueYlt-input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  height: unit(@wxVueYltCellLineHeight, em);
+  line-height: @wxVueYltCellLineHeight;
+
+  // hides the spin-button
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

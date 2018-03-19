@@ -16,11 +16,17 @@
 </head>
 <body>
     <div id="app">
-        <ylt-Input size="small"></ylt-Input>
+        <ylt-Input placeholder="请输入用户名" @on-change="changeData"></ylt-Input>
+        <ylt-Input type="password" placeholder="请输入密码" readonly></ylt-Input>
     </div>
     <script>
         new Vue({
-            el: '#app'
+            el: '#app',
+            methods:{
+                changeData(e) {
+                    debugger
+                }
+            }
         })
     </script>
 </body>
