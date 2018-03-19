@@ -1,9 +1,11 @@
 import yltButton from './components/button'
 import yltInput from './components/input'
+import Message from './components/message'
 
 const components = {
     yltButton,
-    yltInput
+    yltInput,
+    Message
 }
 
 const wxVueYlt = {
@@ -14,6 +16,7 @@ const install = function (Vue) {
     Object.keys(components).forEach( key => {
         Vue.component(key, wxVueYlt[key])
     })
+    Vue.prototype.$Message = Message
 }
 
 //auto install

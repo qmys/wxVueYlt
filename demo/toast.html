@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../dist/styles/index.css">
+    <script type="text/javascript" src="vue.js"></script>
+    <script src="../dist/wxvueylt.min.js"></script>
+    <style>
+        body{
+            height: 100%;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ylt-Button type="primary"  @click="toastHandler">点击弹出信息</ylt-Button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            methods:{
+                toastHandler() {
+                    Message('弹出的消息')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
