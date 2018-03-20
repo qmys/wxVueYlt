@@ -41,6 +41,11 @@ module.exports = {
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.js'
+        }
+    },
     module: {
         rules: rules
     }

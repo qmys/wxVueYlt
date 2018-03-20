@@ -23,6 +23,7 @@
     "gulp-clean-css": "^3.9.3",
     "gulp-less": "^4.0.0",
     "less-loader": "^4.1.0",
+    "vue": "^2.5.16",
     "vue-loader": "^14.2.1",
     "vue-style-loader": "^4.0.2",
     "vue-template-compiler": "^2.5.15",

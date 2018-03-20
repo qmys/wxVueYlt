@@ -9,14 +9,10 @@
         </div>
     </transition>
 </template>
-<script>
+<script type="text/babel">
     export default {
-        name: 'Message',
         props: {
             message: String
-        },
-        data () {
-            debugger
         }
     }
 </script>
