@@ -41,12 +41,11 @@ let message = (options = {}) => {
     instance.closed = false
     clearTimeout(instance.timer)
     instance.message = typeof options === 'string' ? options : options.message
-    debugger
     instance.className = options.className || ''
+    instance.position = options.position || 'middle'
     instance.iconClass = options.iconClass || ''
 
     document.body.appendChild(instance.$el)
-    debugger
     Vue.nextTick(function() {
         instance.visible = true;
         instance.$el.removeEventListener('transitionend', removeDom);

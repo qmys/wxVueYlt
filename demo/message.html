@@ -17,13 +17,21 @@
 <body>
     <div id="app">
         <ylt-Button type="primary"  @click="toastHandler">点击弹出信息</ylt-Button>
+        <ylt-Button type="primary"  @click="toastHandlerTop">弹出位置在顶部</ylt-Button>
     </div>
     <script>
         new Vue({
             el: '#app',
             methods:{
                 toastHandler() {
-                    Message('弹出的消息')
+                    Message('这是弹出的消息')
+                },
+                toastHandlerTop () {
+                    Message({
+                        message: '这是顶部的信息',
+                        position: 'top',
+                        duration: 5000
+                    })
                 }
             }
         })
