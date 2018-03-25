@@ -1,11 +1,8 @@
 <template>
-    <transition>
-        <div id="toast">
-            <div class="wxVueYlt-mask_transparent"></div>
-            <div class="wxVueYlt-toast">
-                <i></i>
-                <p class="wxVueYlt-toast_content">{{message}}</p>
-            </div>
+    <transition name="mint-toast-pop">
+        <div class="mint-toast" v-show="visible">
+            <i class="mint-toast-icon"></i>
+            <span class="mint-toast-text">{{ message }}</span>
         </div>
     </transition>
 </template>
@@ -13,6 +10,14 @@
     export default {
         props: {
             message: String
+        },
+        data () {
+            return {
+                visible: false
+            }
         }
     }
 </script>
+<style>
+
+</style>
