@@ -1,12 +1,12 @@
 <template>
     <transition name="wxVueYlt-message-pop">
-        <div class="wxVueYlt-message" v-show="visible" :class="classPosition" :style="{ 'padding': iconClass=== '' ? '10px' : '20px'}">
-            <i class="wxVueYlt-message-icon"></i>
+        <div class="wxVueYlt-message" v-show="visible" :class="classPosition" :style="{ 'padding': iconClass=== '' ? '10px' : '15px'}">
+            <i class="wxVueYlt-icon" :class="iconClass" v-if="iconClass !==''"></i>
             <span class="wxVueYlt-message-text">{{ message }}</span>
         </div>
     </transition>
 </template>
-<script type="text/babel">
+<script>
     export default {
         props: {
             message: String,

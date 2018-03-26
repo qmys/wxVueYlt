@@ -30,6 +30,14 @@ var rules = [
         loader: 'babel-loader',
         exclude: /node_modules/
     },
+    {
+        test: /\.md/,
+        loader: 'vue-markdown-loader',
+        options: {
+            // 阻止提取脚本和样式标签
+            preventExtract: true
+        }
+    }
 ]
 
 module.exports = {

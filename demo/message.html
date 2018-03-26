@@ -18,6 +18,7 @@
     <div id="app">
         <ylt-Button type="primary"  @click="toastHandler">点击弹出信息</ylt-Button>
         <ylt-Button type="primary"  @click="toastHandlerTop">弹出位置在顶部</ylt-Button>
+        <ylt-Button type="primary"  @click="toastHandlerTopIcon">弹出带有icon的</ylt-Button>
     </div>
     <script>
         new Vue({
@@ -30,6 +31,14 @@
                     Message({
                         message: '这是顶部的信息',
                         position: 'top',
+                        duration: 5000
+                    })
+                },
+                toastHandlerTopIcon () {
+                    Message({
+                        message: '这是带有icon的图表',
+                        position: 'top',
+                        iconClass: 'wxVueYlt-icon-checkmark',
                         duration: 5000
                     })
                 }

@@ -1,11 +1,15 @@
 import yltButton from './components/button'
 import yltInput from './components/input'
 import Message from './components/message'
+import Dialog from './components/dialog'
+import yltPullrefresh from './components/pullRefresh'
 
 const components = {
     yltButton,
     yltInput,
-    Message
+    Message,
+    Dialog,
+    yltPullrefresh
 }
 
 const wxVueYlt = {
@@ -17,6 +21,7 @@ const install = function (Vue) {
         Vue.component(key, wxVueYlt[key])
     })
     Vue.prototype.$Message = Message
+    Vue.prototype.$Dialog = Dialog
 }
 
 //auto install

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../dist/styles/index.css">
+    <script type="text/javascript" src="vue.js"></script>
+    <script src="../dist/wxvueylt.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100%;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ylt-Pullrefresh v-model="isLoading"></ylt-Pullrefresh>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data () {
+                return {
+                    isLoading: false
+                }
+            }
+        })
+    </script>
+</body>
+</html>
