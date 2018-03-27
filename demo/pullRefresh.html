@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id="app">
-        <ylt-Pullrefresh v-model="isLoading"></ylt-Pullrefresh>
+        <ylt-Pullrefresh v-model="isLoading" @refresh="onRefresh"></ylt-Pullrefresh>
     </div>
     <script>
         new Vue({
@@ -28,6 +28,19 @@
             data () {
                 return {
                     isLoading: false
+                }
+            },
+            methods: {
+                onRefresh () {
+                    var _this = this
+                    setTimeout(() => {
+                        Message({
+                            message: '刷新成功',
+                            position: 'top',
+                        })
+                        debugger
+                        _this.isLoading = false
+                    }, 500);
                 }
             }
         })
