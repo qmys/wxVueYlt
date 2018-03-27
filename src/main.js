@@ -3,13 +3,15 @@ import yltInput from './components/input'
 import Message from './components/message'
 import Dialog from './components/dialog'
 import yltPullrefresh from './components/pullRefresh'
+import yltSwitch from './components/switch'
 
 const components = {
     yltButton,
     yltInput,
     Message,
     Dialog,
-    yltPullrefresh
+    yltPullrefresh,
+    yltSwitch
 }
 
 const wxVueYlt = {
