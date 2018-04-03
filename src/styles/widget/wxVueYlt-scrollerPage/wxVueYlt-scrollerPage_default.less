@@ -1,0 +1,35 @@
+@import "../../common/index";
+.wxVueYlt-scrollerPage{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  user-select: none;
+  .wxVueYlt-scrollerContent{
+    width: 100%;
+    transform-origin: left top;
+    transform: translateZ(0);
+    .pull-to-refresh-layer{
+      width: 100%;
+      height: 60px;
+      margin-top: -60px;
+      text-align: center;
+      font-size: 16px;
+      color: rgb(153, 153, 153);
+    }
+    .scroller-loading{
+      width: 100%;
+      height: 60px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 40px;
+      color: rgb(153, 153, 153);
+      position: relative;
+    }
+    .no-data-text{
+      display: inline-block;
+    }
+  }
+}

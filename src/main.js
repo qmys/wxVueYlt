@@ -4,6 +4,7 @@ import Message from './components/message'
 import Dialog from './components/dialog'
 import yltPullrefresh from './components/pullRefresh'
 import yltSwitch from './components/switch'
+import yltScrollerpage from './components/scrollerpage'
 
 const components = {
     yltButton,
@@ -11,7 +12,8 @@ const components = {
     Message,
     Dialog,
     yltPullrefresh,
-    yltSwitch
+    yltSwitch,
+    yltScrollerpage
 }
 
 const wxVueYlt = {

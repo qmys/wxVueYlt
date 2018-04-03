@@ -22,5 +22,8 @@ export default {
         }
         return rootParent
     },
+    getVisibleHeight(element) {
+        return element === window ? element.innerHeight : element.getBoundingClientRect().height;
+    },
     getComputedStyle: document.defaultView.getComputedStyle.bind(document.defaultView)
 }

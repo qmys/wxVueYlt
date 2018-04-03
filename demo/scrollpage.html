@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../dist/styles/index.css">
+    <script type="text/javascript" src="vue.js"></script>
+    <script src="../dist/wxvueylt.min.js"></script>
+    <style>
+        body{
+            height: 100%;
+            overflow-y: scroll;
+        }
+        #app{
+            height: 100%;
+        }
+        ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid rgb(238, 238, 238);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ylt-scrollerpage
+             :on-infinite="infinite"
+             :on-refresh="refresh"
+             :loading-txt="loading"
+             refresh-txt="下拉可以刷新哦"
+        >
+            <ul>
+                <li v-for="(list, index) in lists" :key="index">{{list}}</li>
+            </ul>
+        </ylt-scrollerpage>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data () {
+                return {
+                    length: 10,
+                    loading: '请主人稍等一会。。'
+                }
+            },
+            computed: {
+                lists () {
+                    debugger
+                    let arr = []
+                    for (let i = 1; i < this.length; i++) {
+                        arr.push('列表' + i)
+                    }
+                    return arr
+                }
+            },
+            methods: {
+                infinite (done) {
+                    let _this = this
+                    setTimeout(() => {
+                        if (this.length >= 22) {
+                            done(true)
+                            return
+                        }
+                        this.length++
+                        done()
+                    }, 1000)
+                },
+                refresh (done) {
+                    let _this = this
+                    setTimeout(() => {
+                        _this.length = 12
+                        done()
+                    }, 1000)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
