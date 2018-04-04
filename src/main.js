@@ -5,6 +5,8 @@ import Dialog from './components/dialog'
 import yltPullrefresh from './components/pullRefresh'
 import yltSwitch from './components/switch'
 import yltScrollerpage from './components/scrollerpage'
+import yltTab from './components/tab'
+import yltTabs from './components/tabs'
 
 const components = {
     yltButton,
@@ -13,7 +15,9 @@ const components = {
     Dialog,
     yltPullrefresh,
     yltSwitch,
-    yltScrollerpage
+    yltScrollerpage,
+    yltTab,
+    yltTabs,
 }
 
 const wxVueYlt = {

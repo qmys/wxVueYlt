@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../dist/styles/index.css">
+    <script type="text/javascript" src="vue.js"></script>
+    <script src="../dist/wxvueylt.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        body,#app{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ylt-Tabs>
+            <ylt-Tab v-for="index in 4" :title="'选项 ' + index" :key="index">
+                内容 {{ index }}
+            </ylt-Tab>
+        </ylt-Tabs>
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app'
+    })
+</script>
+</html>

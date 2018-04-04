@@ -1,0 +1,56 @@
+@import "../../common/index";
+.wxVueYlt-tabs{
+  position: relative;
+  .wxVueYlt-tabs_wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    overflow: hidden;
+    .wxVueYlt-tabs_nav{
+      display: flex;
+      user-select: none;
+      position: relative;
+      background-color: #fff;
+      .wxVueYlt-tabs_nav-bar{
+        position: absolute;
+        left: 0;
+        height: 2px;
+        bottom: 15px;
+        z-index: 1;
+        background-color: @wxVueYltColorPrimary;
+      }
+      .wxVueYlt-tab{
+        flex: 1;
+        cursor: pointer;
+        padding: 0 5px;
+        font-size: 14px;
+        position: relative;
+        color: #333;
+        line-height: 44px;
+        text-align: center;
+        box-sizing: border-box;
+        background-color: #fff;
+        min-width: 0;
+        span{
+          display: block;
+        }
+        &.wxVueYlt-tab-active{
+          color: @wxVueYltColorPrimary;
+        }
+      }
+    }
+  }
+}
+.wxVueYlt-tabs_line{
+  padding-top: 44px;
+  .wxVueYlt-tabs_wrap{
+    height: 44px;
+    .wxVueYlt-tabs_nav{
+      height: 100%;
+      box-sizing: content-box;
+      padding-bottom: 15px;
+    }
+  }
+}
