@@ -3,6 +3,10 @@
         <div
             ref="wrap"
             class="wxVueYlt-tabs_wrap"
+            :class="[`wxVueYlt-tabs_wrap-${position}`,{
+             'wxVueYlt-tabs-scrollable': scrollable,
+             'wxVueYlt-hairline-top_bottom': type === 'line'
+           }]"
         >
             <div class="wxVueYlt-tabs_nav" :class="`wxVueYlt-tabs_nav-${type}`" ref="nav">
                 <div v-if="type === 'line'" class="wxVueYlt-tabs_nav-bar" :style="navBarStyle" />
@@ -26,6 +30,7 @@
 
 <script>
     import yltNode from '../../utils/node'
+    import { raf } from '../../utils/tool'
     export default {
         name: 'ylt-tabs',
         components: {
@@ -43,16 +48,29 @@
             duration: {
                 type: Number,
                 default: 0.2
+            },
+            scollNumber: {
+                type: Number,
+                default: 4
             }
         },
         data () {
             return {
                 tabs: [],
                 curActive: 0,
+                position:'content-top',
                 navBarStyle: {}
             }
         },
+        computed: {
+            scrollable () {
+                return this.tabs.length > this.scollNumber
+            }
+        },
         watch:{
+            active(val) {
+                this.currentActive(val);
+            },
             tabs(){
                 this.currentActive(this.curActive || this.active);
                 this.setNavBar();
@@ -65,6 +83,9 @@
         mounted() {
             this.currentActive(this.active);
             this.setNavBar();
+            this.$nextTick(() => {
+                this.scrollIntoView()
+            })
         },
         methods: {
             currentActive(active) {
@@ -81,7 +102,7 @@
                     if (!this.$refs.tabs) {
                         return;
                     }
-                    const tab = this.$refs.tabs[this.curActive]
+                    let tab = this.$refs.tabs[this.curActive]
                     this.navBarStyle = {
                         width: `${tab.offsetWidth || 0}px`,
                         transform: `translate(${tab.offsetLeft || 0}px, 0)`,
@@ -95,23 +116,33 @@
                 /**
                  * 更新选中的值，然后监听，将下划线滑动到指定的位置
                  * */
+                this.$emit('click', index, title);
                 this.curActive = index;
             },
             scrollIntoView() {
-                if(!this.$refs.tabs) {
+                if(!this.scrollable || !this.$refs.tabs) {
                     return;
                 }
                 const tab= this.$refs.tabs[this.curActive]
                 const { nav } = this.$refs
-//                const { scrollLeft, offsetWidth: navWidth } = nav
-//                const { offsetLeft, offsetWidth: tabWidth} = tab
-//                this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2)
+                const { scrollLeft, offsetWidth: navWidth } = nav
+                const { offsetLeft, offsetWidth: tabWidth} = tab
+                this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2)
             },
             scrollTo(el, from, to){
                 /**
                  * 滑动到指定位置
                  * **/
-                debugger
+                let count = 0
+                const frames = Math.round(this.duration * 1000 / 16);
+                const animate = () => {
+                    el.scrollLeft += (to - from) / frames;
+                    /* istanbul ignore next */
+                    if (++count < frames) {
+                        raf(animate);
+                    }
+                };
+                animate();
             }
         }
     }

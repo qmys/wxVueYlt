@@ -16,23 +16,33 @@
             list-style: none;
         }
         body,#app{
-            height: 100%;
+            height: 90%;
+            padding-top: 10%;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <ylt-Tabs>
-            <ylt-Tab v-for="index in 4" :title="'选项 ' + index" :key="index">
+        <ylt-Tabs :active="active" @click="onClick">
+            <ylt-Tab v-for="index in 8" :title="'选项 ' + index" :key="index">
                 内容 {{ index }}
             </ylt-Tab>
         </ylt-Tabs>
-
     </div>
 </body>
 <script>
     new Vue({
-        el: '#app'
+        el: '#app',
+        data () {
+            return{
+                active:2
+            }
+        },
+        methods:{
+            onClick(index, title){
+                alert(index + title)
+            }
+        }
     })
 </script>
 </html>

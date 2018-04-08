@@ -9,3 +9,11 @@ export function oneOf(value, list) {
     }
     return false
 }
+
+const iRaf = window.requestAnimationFrame || window.webkitRequestAnimationFrame
+
+export function raf(fn) {
+    return iRaf.call(window, fn);
+}
+
+

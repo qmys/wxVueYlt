@@ -31,4 +31,22 @@ a{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
+[class*='wxVueYlt-hairline']{
+  position: relative;
+}
+[class*='wxVueYlt-hairline']:after{
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e5e5e5;
+}
+.wxVueYlt-hairline-top_bottom:after {
+  border-width: 1px;
+}
