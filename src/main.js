@@ -7,6 +7,8 @@ import yltSwitch from './components/switch'
 import yltScrollerpage from './components/scrollerpage'
 import yltTab from './components/tab'
 import yltTabs from './components/tabs'
+import yltTabbar from './components/tabbar'
+import yltTabbarItem from './components/tabbarItem'
 
 const components = {
     yltButton,
@@ -18,6 +20,8 @@ const components = {
     yltScrollerpage,
     yltTab,
     yltTabs,
+    yltTabbar,
+    yltTabbarItem
 }
 
 const wxVueYlt = {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试</title>
+    <title>tabbar</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="../dist/styles/index.css">
     <script type="text/javascript" src="vue.js"></script>
@@ -22,28 +22,35 @@
     </style>
 </head>
 <body>
-    <div id="app">
-        <ylt-Tabs :active="active" @click="onClick">
-            <ylt-Tab v-for="index in 8" :title="'选项 ' + index" :key="index">
-                内容 {{ index }}
-            </ylt-Tab>
-        </ylt-Tabs>
-    </div>
-</body>
+<div id="app">
+    <ylt-Tabbar v-model="active">
+        <ylt-Tabbar-Item icon="home">首页</ylt-Tabbar-Item>
+        <ylt-Tabbar-Item>权证登记</ylt-Tabbar-Item>
+        <ylt-Tabbar-Item>土地流转</ylt-Tabbar-Item>
+    </ylt-Tabbar>
+</div>
+<style>
+    html{
+        height: 100%;
+    }
+    #app,body{
+        background-color: #f5f5f5;
+    }
+    #app .wxVueYlt-tabbar-fixed{
+        top: 0;
+    }
+</style>
 <script>
     new Vue({
         el: '#app',
         data () {
             return{
-                active:2
+                active:0
             }
         },
         methods:{
-            onClick(index, title){
-                debugger
-                alert(index + title)
-            }
         }
     })
 </script>
+</body>
 </html>
