@@ -1,3 +1,4 @@
+import yltIcon from './components/icon'
 import yltButton from './components/button'
 import yltInput from './components/input'
 import Message from './components/message'
@@ -12,6 +13,7 @@ import yltTabbarItem from './components/tabbarItem'
 import yltPanel from './components/panel'
 
 const components = {
+    yltIcon,
     yltButton,
     yltInput,
     Message,
