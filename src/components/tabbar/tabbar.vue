@@ -5,7 +5,7 @@
 </template>
 <script>
     export default {
-        name: 'tabbar',
+        name: 'ylt-Tabbar',
         data(){
             return{
                 item:[]

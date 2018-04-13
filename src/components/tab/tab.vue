@@ -6,7 +6,7 @@
 <script>
     import findParent from '../../mixins/find-parent'
     export default {
-        name:'ylt-tab',
+        name:'ylt-Tab',
         mixins: [findParent],
         props: {
             title: String

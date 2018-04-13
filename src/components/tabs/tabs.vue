@@ -32,7 +32,7 @@
     import yltNode from '../../utils/node'
     import { raf } from '../../utils/tool'
     export default {
-        name: 'ylt-tabs',
+        name: 'ylt-Tabs',
         components: {
             yltNode
         },

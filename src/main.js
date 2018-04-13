@@ -9,6 +9,7 @@ import yltTab from './components/tab'
 import yltTabs from './components/tabs'
 import yltTabbar from './components/tabbar'
 import yltTabbarItem from './components/tabbarItem'
+import yltPanel from './components/panel'
 
 const components = {
     yltButton,
@@ -21,7 +22,8 @@ const components = {
     yltTab,
     yltTabs,
     yltTabbar,
-    yltTabbarItem
+    yltTabbarItem,
+    yltPanel
 }
 
 const wxVueYlt = {

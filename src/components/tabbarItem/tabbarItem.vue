@@ -16,7 +16,7 @@
 </template>
 <script>
     export default {
-        name: "tabbar-item",
+        name: "ylt-Tabbar-Item",
         data () {
           return {
               active: false

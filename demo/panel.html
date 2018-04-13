@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../dist/styles/index.css">
+    <script type="text/javascript" src="vue.js"></script>
+    <script src="../dist/wxvueylt.min.js"></script>
+    <style>
+        body,html{
+            height: 100%;
+            overflow-y: scroll;
+            background-color: #f5f5f5
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ylt-panel>
+        <ylt-Input placeholder="请输入用户名"></ylt-Input>
+        <div slot="footer" style="text-align: right">
+            <ylt-Button type="primary" size="small">提交</ylt-Button>
+        </div>
+    </ylt-panel>
+</div>
+<script>
+    new Vue({
+        el: '#app'
+    })
+</script>
+</body>
+</html>

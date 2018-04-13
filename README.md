@@ -1,5 +1,7 @@
 # wxVueYlt
 
+icon:  http://ionicons.com/
+
 ### Install wxVueYlt
 
 Using npm:

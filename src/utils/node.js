@@ -8,7 +8,6 @@ export default {
         node: Array
     },
     render: function (createElement, context) {
-        debugger
         return context.props.node;
     }
 }
