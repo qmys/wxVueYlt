@@ -20,7 +20,7 @@
             /**
              * 调用混入对象里面的方法
              * **/
-            this.findParent('ylt-tabs')
+            this.findParent('ylt-Tabs')
             this.parent.tabs.push(this)
         }
     }
